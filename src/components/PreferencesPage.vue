@@ -263,7 +263,7 @@ export default {
     async mounted() {
         if (Object.keys(this.$route.query).length > 0) this.$router.replace({ query: {} });
 
-        this.fetchJson("https://piped-instances.kavin.rocks/").then(resp => {
+        this.fetchJson("https://instances.tokhmi.xyz/").then(resp => {
             this.instances = resp;
             if (this.instances.filter(instance => instance.api_url == this.apiUrl()).length == 0)
                 this.instances.push({
@@ -275,7 +275,7 @@ export default {
         });
 
         if (this.testLocalStorage) {
-            this.selectedInstance = this.getPreferenceString("instance", "https://pipedapi.kavin.rocks");
+            this.selectedInstance = this.getPreferenceString("instance", "https://pipedapi.tokhmi.xyz");
 
             this.sponsorBlock = this.getPreferenceBoolean("sponsorblock", true);
             if (localStorage.getItem("selectedSkip") !== null) {
